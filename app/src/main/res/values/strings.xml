@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Fingerprint Login</string>
     <string name="instructions">Touch the fingerprint please</string>
+    <string name="do_not_have">Your device doesn\'t support fingerprint authentication</string>
+    <string name="add_perm">Please enable the fingerprint permission</string>
+    <string name="no_fingerprint">No fingerprint configured. Please register at least one fingerprint in your device\'s Settings</string>
+    <string name="enable_keyguard">Please enable lockscreen security in your device\'s Settings</string>
+    <string name="tvMain">holder</string>
 </resources>
