@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Fingerprint Login</string>
+    <string name="instructions">Touch the fingerprint please</string>
 </resources>
