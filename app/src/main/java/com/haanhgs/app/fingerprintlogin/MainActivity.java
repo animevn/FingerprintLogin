@@ -35,9 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String KEY_NAME = "yourKey";
     private Cipher cipher;
     private KeyStore keyStore;
-    private KeyGenerator keyGenerator;
     private TextView textView;
-    private FingerprintManager.CryptoObject cryptoObject;
     private FingerprintManager fingerprintManager;
     private KeyguardManager keyguardManager;
 
@@ -77,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
             keyStore = KeyStore.getInstance("AndroidKeyStore");
 
             //Generate the key//
-            keyGenerator = KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES, "AndroidKeyStore");
+            KeyGenerator keyGenerator = KeyGenerator
+                    .getInstance(KeyProperties.KEY_ALGORITHM_AES, "AndroidKeyStore");
 
             //Initialize an empty KeyStore//
             keyStore.load(null);
@@ -153,8 +152,9 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (initCipher()) {
-                    //If the cipher is initialized successfully, then create a CryptoObject instance//
-                    cryptoObject = new FingerprintManager.CryptoObject(cipher);
+                    //If the cipher is initialized successfully, then create a CryptoObject instance
+                    FingerprintManager.CryptoObject cryptoObject =
+                            new FingerprintManager.CryptoObject(cipher);
 
                     // Here, I’m referencing the FingerprintHandler class that we’ll create
                     // in the next section. This class will be responsible
